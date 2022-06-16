@@ -1,0 +1,11 @@
+<h1>EDC Web</h1>
+
+<div id="launch">
+<p>Configuration: </p>  <input #conf (keyup.enter)="launchSA(conf.value)"> <button (click)="launchSA(conf.value)">Launch SA</button>
+</div>
+<br>
+<br>
+<div>
+    <p>Upload your Selfie: </p>
+    <input type="file" class="file-upload"  accept="image/*">
+</div>
