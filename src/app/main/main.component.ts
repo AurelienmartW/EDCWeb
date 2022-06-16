@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
   launchSA(conf:string) {
-    window.open("https://wicjm63ftf.eu-west-1.awsapprunner.com/"+"?config="+conf)
+    window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/"+"?config="+conf)
   }
 
 }
