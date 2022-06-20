@@ -18,8 +18,14 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
   launchSA(conf:string) {
-    window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/"+"?config="+conf)
+    if (conf !=''){
+    window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/"+"?config="+conf)}
+  
+    else{
+      window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/")
+    }
   }
+  
   launchSA_API() {
     window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/")
   }
@@ -32,5 +38,4 @@ export class MainComponent implements OnInit {
       })
     })
   }
-
 }
