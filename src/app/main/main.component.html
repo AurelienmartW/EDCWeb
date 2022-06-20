@@ -1,5 +1,6 @@
 <h1>EDC Web</h1>
 
+<h3> Scenario 3 </h3>
 <div id="launch">
 <p>Configuration: </p>  <input #conf (keyup.enter)="launchSA(conf.value)"> <button (click)="launchSA(conf.value)">Launch SA</button>
 </div>
@@ -9,3 +10,7 @@
     <p>Upload your Selfie: </p>
     <input type="file" class="file-upload"  accept="image/*">
 </div>
+
+<h3> Scenario 2 </h3>
+<button (click)="launchSA_API()">Launch SA</button> <br>
+<input #load (keyup.enter)="load_image(load.value)"> <button (click)="load_image(load.value)">Load image</button>
