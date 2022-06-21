@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
   launchSA_API(load:string) {
     window.open("https://192.168.1.112:4200/?name="+load)
   }
-  load_image(load:string) {
+  load_image_azure(load:string) {
     const blobClient = this.containerClient.getBlobClient(load+'.jpeg')
     blobClient.download().then(resp => {
       resp.blobBody?.then(blob => {
@@ -40,13 +40,13 @@ export class MainComponent implements OnInit {
   }
 
   load_image_gcp(load:string) {
-    const url = `https://storage.googleapis.com/selfie-files/${load}`
+    const url = `https://storage.googleapis.com/selfie-files/${load}.jpeg`
     window.open(url)
   }
 
   load_image_aws(load:string) {
     const oReq_aws = new XMLHttpRequest();
-    const URL_aws = "https://iizy7po9ah.execute-api.eu-west-1.amazonaws.com/dev/pocarchi/" + load;
+    const URL_aws = "https://iizy7po9ah.execute-api.eu-west-1.amazonaws.com/dev/pocarchi/" + load + '.jpeg';
     oReq_aws.open("GET", URL_aws, true);
     oReq_aws.responseType = 'blob';
     console.log(oReq_aws)

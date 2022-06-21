@@ -1,9 +1,11 @@
 <h1>EDC Web</h1>
 
 <h3> Scenario 2 </h3>
-Votre nom: <input #load (keyup.enter)="load_image(load.value)">
+Votre nom: <input #load>
 <button (click)="launchSA_API(load.value)">Launch SA</button> <br>
- <button (click)="load_image(load.value)">Load image</button>
+<button (click)="load_image_azure(load.value)">Load image from Azure</button> <br>
+<button (click)="load_image_gcp(load.value)">Load image from GCP</button><br>
+<button (click)="load_image_aws(load.value)">Load image from AWS</button>
 
 
 <h3> Scenario 3 </h3>
@@ -16,9 +18,3 @@ Votre nom: <input #load (keyup.enter)="load_image(load.value)">
     <p>Upload your Selfie: </p>
     <input type="file" class="file-upload"  accept="image/*">
 </div>
-
-<h3> Scenario 2 </h3>
-<button (click)="launchSA_API()">Launch SA</button> <br>
-<input #load_azure (keyup.enter)="load_image_azure(load_azure.value)"> <button (click)="load_image_azure(load_azure.value)">Load image from Azure</button> <br>
-<input #load_gcp (keyup.enter)="load_image_gcp(load_gcp.value)"> <button (click)="load_image_gcp(load_gcp.value)">Load image from GCP</button><br>
-<input #load_aws (keyup.enter)="load_image_aws(load_aws.value)"> <button (click)="load_image_aws(load_aws.value)">Load image from AWS</button>
