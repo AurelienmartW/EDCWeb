@@ -25,11 +25,12 @@ export class MainComponent implements OnInit {
       window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/")
     }
   }
-  
+
   launchSA_API() {
     window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/")
   }
-  load_image(load:string) {
+
+  load_image_azure(load:string) {
     const blobClient = this.containerClient.getBlobClient(load)
     blobClient.download().then(resp => {
       resp.blobBody?.then(blob => {
@@ -37,5 +38,29 @@ export class MainComponent implements OnInit {
         window.open(url)
       })
     })
+  }
+
+  load_image_gcp(load:string) {
+    const url = `https://storage.googleapis.com/selfie-files/${load}`
+    window.open(url)
+  }
+
+  load_image_aws(load:string) {
+    const oReq_aws = new XMLHttpRequest();
+    const URL_aws = "https://iizy7po9ah.execute-api.eu-west-1.amazonaws.com/dev/pocarchi/" + load;
+    oReq_aws.open("GET", URL_aws, true);
+    oReq_aws.responseType = 'blob';
+    console.log(oReq_aws)
+    oReq_aws.onload = function () {
+      if (oReq_aws.status === 200) {
+          // If successful, resolve the promise by passing back the request response
+          const url = window.URL.createObjectURL(oReq_aws.response)
+          window.open(url)
+      } else {
+          // If it fails, reject the promise with a error message
+          console.error("Error")
+      }
+    };
+    oReq_aws.send();
   }
 }

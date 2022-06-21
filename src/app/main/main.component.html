@@ -13,4 +13,6 @@
 
 <h3> Scenario 2 </h3>
 <button (click)="launchSA_API()">Launch SA</button> <br>
-<input #load (keyup.enter)="load_image(load.value)"> <button (click)="load_image(load.value)">Load image</button>
+<input #load_azure (keyup.enter)="load_image_azure(load_azure.value)"> <button (click)="load_image_azure(load_azure.value)">Load image from Azure</button> <br>
+<input #load_gcp (keyup.enter)="load_image_gcp(load_gcp.value)"> <button (click)="load_image_gcp(load_gcp.value)">Load image from GCP</button><br>
+<input #load_aws (keyup.enter)="load_image_aws(load_aws.value)"> <button (click)="load_image_aws(load_aws.value)">Load image from AWS</button>
