@@ -26,11 +26,11 @@ export class MainComponent implements OnInit {
     }
   }
   
-  launchSA_API() {
-    window.open("https://jhiueikyz3.eu-west-1.awsapprunner.com/")
+  launchSA_API(load:string) {
+    window.open("https://192.168.1.112:4200/?name="+load)
   }
   load_image(load:string) {
-    const blobClient = this.containerClient.getBlobClient(load)
+    const blobClient = this.containerClient.getBlobClient(load+'.jpeg')
     blobClient.download().then(resp => {
       resp.blobBody?.then(blob => {
         const url = window.URL.createObjectURL(blob)
