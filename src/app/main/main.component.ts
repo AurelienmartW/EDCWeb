@@ -27,7 +27,7 @@ export class MainComponent implements OnInit {
   }
   
   launchSA_API(load:string) {
-    window.open("https://192.168.1.112:4200/?name="+load)
+    window.open("https://mwnk5whr37.eu-west-1.awsapprunner.com/?name="+load)
   }
   load_image_azure(load:string) {
     const blobClient = this.containerClient.getBlobClient(load+'.jpeg')
