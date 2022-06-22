@@ -34,14 +34,16 @@ export class MainComponent implements OnInit {
     blobClient.download().then(resp => {
       resp.blobBody?.then(blob => {
         const url = window.URL.createObjectURL(blob)
-        window.open(url)
+        let image = document.getElementById("image")
+        image?.setAttribute('src', url)
       })
     })
   }
 
   load_image_gcp(load:string) {
     const url = `https://storage.googleapis.com/selfie-files/${load}.jpeg`
-    window.open(url)
+    let image = document.getElementById("image")
+    image?.setAttribute('src', url)
   }
 
   load_image_aws(load:string) {
@@ -54,7 +56,8 @@ export class MainComponent implements OnInit {
       if (oReq_aws.status === 200) {
           // If successful, resolve the promise by passing back the request response
           const url = window.URL.createObjectURL(oReq_aws.response)
-          window.open(url)
+          let image = document.getElementById("image")
+          image?.setAttribute('src', url)
       } else {
           // If it fails, reject the promise with a error message
           console.error("Error")
